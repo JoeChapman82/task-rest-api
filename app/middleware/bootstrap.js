@@ -9,10 +9,6 @@ module.exports = (app) => {
     app.set('trust proxy', 1);
     app.use(helmet({}));
 
-    if(process.env.NODE_ENV === 'production') {
-        app.use(httpsRedirect);
-    }
-
     app.use(favicon(path.join(__dirname, '../assets/images/', 'favicon.ico')));
     app.use(express.static(path.join(__dirname, '../assets/')));
 
