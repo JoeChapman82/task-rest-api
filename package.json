@@ -1,0 +1,32 @@
+{
+  "name": "task-rest-api",
+  "version": "1.0.0",
+  "description": "A rest api for tasks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "devstart": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "task",
+    "system",
+    "rest",
+    "api"
+  ],
+  "author": "Joe Chapman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "mongoose": "^5.8.1",
+    "require-dir": "^1.2.0",
+    "serve-favicon": "^2.5.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

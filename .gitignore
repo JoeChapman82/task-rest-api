@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/*
+.editorconfig
+.nyc_output
+.scannerwork/*
+/Dockerfile
+.nyc_output/*
+/.env
+/.env.testing
+/ecosystem.config.js
+./coverage/lcov.info

@@ -1,0 +1,82 @@
+{
+    "task": {
+        "endpoints": {
+            "/task": {
+                "GET": {
+                    "expects": [],
+                    "mandatoryFields": [],
+                    "behaviour": "Returns all tasks"
+                },
+                "POST": {
+                    "expects": ["body.name", "body.due", "body.description"],
+                    "mandatoryFields": ["body.name", "body.due", "body.description"],
+                    "behaviour": "Creates and returns a task"
+                },
+                "DELETE": {
+                    "expects": [],
+                    "mandatoryFields": [],
+                    "behaviour": "Deletes all tasks"
+                }
+            },
+            "/task/{{ id }}": {
+                "GET": {
+                    "expects": ["params.id"],
+                    "mandatoryFields": ["params.id"],
+                    "behaviour": "Returns task with provided id"
+                },
+                "PATCH": {
+                    "expects": ["params.id", "body.name", "body.due", "body.description", "body.userId"],
+                    "mandatoryFields": ["paramsid"],
+                    "behaviour": "Updates and returns task with provided id"
+                },
+                "DELETE": {
+                    "expects": ["params.id"],
+                    "mandatoryFields": ["params.id"],
+                    "behaviour": "Deletes and returns task with provided id"
+                }
+            }
+        }
+    },
+    "user": {
+        "endpoints": {
+            "/user": {
+                "POST": {
+                    "expects": ["headers.email", "headers.password", "body.name"],
+                    "mandatoryFields": ["headers.email", "headers.password", "body.name"],
+                    "behaviour": "Creates and returns a user"
+                },
+                "DELETE": {
+                    "expects": [],
+                    "mandatoryFields": [],
+                    "behaviour": "Deletes all users"
+                }
+            },
+            "/user/{{ id }}": {
+                "GET": {
+                    "expects": "params.id",
+                    "mandatoryFields": ["params.id"],
+                    "behaviour": "Returns user with provided id"
+                },
+                "PATCH": {
+                    "expects": ["params.id", "headers.email", "headers.password", "body.name"],
+                    "mandatoryFields": ["params.id"],
+                    "behaviour": "Updates and returns user with provided id"
+                },
+                "DELETE": {
+                    "expects": "params.id",
+                    "mandatoryFields": ["params.id"],
+                    "behaviour": "Deletes and returns user with provided id"
+                }
+            }
+        }
+    },
+    "other": {
+        "endpoints": {
+            "login": {
+                "expects": ["header.email", "header.password"],
+                "mandatoryFields": ["header.email", "header.password"],
+                "behaviour": "Returns a user if email and password are correct"
+            }
+        }
+    }
+}
