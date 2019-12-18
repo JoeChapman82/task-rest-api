@@ -8,7 +8,8 @@ module.exports = () => {
 mongoose.connect(db, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 mongoose.connection
 .once('open', () => console.log('Connection establised with database'))
