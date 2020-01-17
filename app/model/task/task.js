@@ -23,7 +23,7 @@ const TaskSchema = new Schema({
         index: true,
     },
     user: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: 'user',
         default: null,
         index: true

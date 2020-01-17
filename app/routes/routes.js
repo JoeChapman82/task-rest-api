@@ -71,12 +71,17 @@ module.exports = (app) => {
             update.due = new Date(req.body.due);
         }
         if(req.body.user) {
-            update.user = req.body.user
+            let locatedUser = await user.read.byId(req.body.user);
+            console.log('--------------------------------');
+            console.log(req.body.user);
+            console.log('--------------------------------');
+            update.user = locatedUser._id;
         }
         try {
             await task.update.byId(req.params.id, update);
             res.send(await task.read.byId(req.params.id));
         } catch(error) {
+            console.log(error);
             responses.serverError(req, res);
         }
     });
